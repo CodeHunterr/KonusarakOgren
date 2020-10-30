@@ -1,0 +1,254 @@
+﻿@model BusinessProject.Models.DataModels
+
+@{
+    ViewData["Title"] = "GetCurrentData";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+
+
+<div class="row">
+    <div class="panel panel-green">
+
+
+        @using (Html.BeginForm("GetCurrentData", "Data", FormMethod.Post))
+        {
+            <div class="panel-body" style="padding-left: 15px">
+                <div class="row" style="padding-left: 400px">
+                    <div class="form-group col-md-6">                        
+                        @Html.DropDownListFor(m => m.title.id, Model.titleSelectList, new { @id = "drpTitles", @class = "form-control", style = "width:570px;" })
+                        @Html.ValidationMessageFor(m => m.title.id)
+                    </div>
+                </div>
+                <div class="row" style="padding-left: 400px">
+                    <div class="form-group col-md-6">
+
+
+                        @Html.TextAreaFor(m => m.content.content, 10, 80, new { htmlAttributes = new { @id = "txtDescription", @class = "form-control" } })
+
+                        @*, new { style = "width: 400px; height: 200px;" }*@
+                        @*@Html.TextAreaFor(model => model.content.content, new { @class = "form-control", @rows = 4 })*@
+
+                        @Html.ValidationMessageFor(m => m.content.id)
+                    </div>
+                </div>
+                <div style="padding-left: 400px">
+
+                    <div class="row">
+                        <div class="form-group col-md-6">
+                            @Html.TextBoxFor(m => m.question1.question, new { style = "width:600px; height:35px; margin-right:auto;" })
+                            @Html.ValidationMessageFor(m => m.question1.id)
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="form-group col-md-3">
+                            @Html.TextBoxFor(m => m.question1.aChoise, new { style = "width:275px; height:35px;" })
+                            @Html.ValidationMessageFor(m => m.question1.id)
+                        </div>
+
+
+                        <div class="form-group col-md-3" style="padding-left: 152px">
+                            @Html.TextBoxFor(m => m.question1.bChoise, new { style = "width:275px; height:35px;" })
+                            @Html.ValidationMessageFor(m => m.question1.id)
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="form-group col-md-3">
+                            @Html.TextBoxFor(m => m.question1.cChoise, new { style = "width:275px; height:35px;" })
+                            @Html.ValidationMessageFor(m => m.question1.id)
+                        </div>
+
+
+                        <div class="form-group col-md-3" style="padding-left: 152px">
+                            @Html.TextBoxFor(m => m.question1.dChoise, new { style = "width:275px; height:35px;" })
+                            @Html.ValidationMessageFor(m => m.question1.id)
+                        </div>
+                    </div>
+                    <div class="row" style="padding-left: 225px">
+                        <div class="form-group col-md-6">
+
+                            @Html.DropDownListFor(m => m.question1.trueAnswer1, new List<SelectListItem>
+                                {
+                                new SelectListItem { Text = "A", Value = "1" },
+                                new SelectListItem { Text = "B", Value = "2" },
+                                new SelectListItem { Text = "C", Value = "3" },
+                                new SelectListItem { Text = "D", Value = "4" },
+
+                                }, "Doğru Cevap Seç")
+                            @Html.ValidationMessageFor(m => m.question1.trueAnswer1)
+                        </div>
+                    </div>
+                    <br />
+
+                    <div class="row">
+                        <div class="form-group col-md-6">
+                            @Html.TextBoxFor(m => m.question2.question, new { style = "width:600px; height:35px; margin-right:auto;" })
+                            @Html.ValidationMessageFor(m => m.question2.id)
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="form-group col-md-3">
+                            @Html.TextBoxFor(m => m.question2.aChoise, new { style = "width:275px; height:35px;" })
+                            @Html.ValidationMessageFor(m => m.question2.id)
+                        </div>
+
+
+                        <div class="form-group col-md-3" style="padding-left: 152px">
+                            @Html.TextBoxFor(m => m.question2.bChoise, new { style = "width:275px; height:35px;" })
+                            @Html.ValidationMessageFor(m => m.question2.id)
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="form-group col-md-3">
+                            @Html.TextBoxFor(m => m.question2.cChoise, new { style = "width:275px; height:35px;" })
+                            @Html.ValidationMessageFor(m => m.question2.id)
+                        </div>
+
+
+                        <div class="form-group col-md-3" style="padding-left: 152px">
+                            @Html.TextBoxFor(m => m.question2.dChoise, new { style = "width:275px; height:35px;" })
+                            @Html.ValidationMessageFor(m => m.question2.id)
+                        </div>
+                    </div>
+                    <div class="row" style="padding-left: 225px">
+                        <div class="form-group col-md-6">
+
+                            @Html.DropDownListFor(m => m.question2.trueAnswer2, new List<SelectListItem>
+                                {
+                                new SelectListItem { Text = "A", Value = "1" },
+                                new SelectListItem { Text = "B", Value = "2" },
+                                new SelectListItem { Text = "C", Value = "3" },
+                                new SelectListItem { Text = "D", Value = "4" },
+
+                                }, "Doğru Cevap Seç")
+                            @Html.ValidationMessageFor(m => m.question2.trueAnswer2)
+                        </div>
+                    </div>
+                    <br />
+
+                    <div class="row">
+                        <div class="form-group col-md-6">
+                            @Html.TextBoxFor(m => m.question3.question, new { style = "width:600px; height:35px; margin-right:auto;" })
+                            @Html.ValidationMessageFor(m => m.question3.id)
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="form-group col-md-3">
+                            @Html.TextBoxFor(m => m.question3.aChoise, new { style = "width:275px; height:35px;" })
+                            @Html.ValidationMessageFor(m => m.question3.id)
+                        </div>
+
+
+                        <div class="form-group col-md-3" style="padding-left: 152px">
+                            @Html.TextBoxFor(m => m.question3.bChoise, new { style = "width:275px; height:35px;" })
+                            @Html.ValidationMessageFor(m => m.question3.id)
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="form-group col-md-3">
+                            @Html.TextBoxFor(m => m.question3.cChoise, new { style = "width:275px; height:35px;" })
+                            @Html.ValidationMessageFor(m => m.question3.id)
+                        </div>
+
+
+                        <div class="form-group col-md-3" style="padding-left: 152px">
+                            @Html.TextBoxFor(m => m.question3.dChoise, new { style = "width:275px; height:35px;" })
+                            @Html.ValidationMessageFor(m => m.question3.id)
+                        </div>
+                    </div>
+                    <div class="row" style="padding-left: 225px">
+                        <div class="form-group col-md-6">
+
+                            @Html.DropDownListFor(m => m.question3.trueAnswer3, new List<SelectListItem>
+                                {
+                                new SelectListItem { Text = "A", Value = "1" },
+                                new SelectListItem { Text = "B", Value = "2" },
+                                new SelectListItem { Text = "C", Value = "3" },
+                                new SelectListItem { Text = "D", Value = "4" },
+
+                                }, "Doğru Cevap Seç")
+                            @Html.ValidationMessageFor(m => m.question3.trueAnswer3)
+                        </div>
+                    </div>
+                    <br />
+
+                    <div class="row">
+                        <div class="form-group col-md-6">
+                            @Html.TextBoxFor(m => m.question4.question, new { style = "width:600px; height:35px; margin-right:auto;" })
+                            @Html.ValidationMessageFor(m => m.question4.id)
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="form-group col-md-3">
+                            @Html.TextBoxFor(m => m.question4.aChoise, new { style = "width:275px; height:35px;" })
+                            @Html.ValidationMessageFor(m => m.question4.id)
+                        </div>
+
+
+                        <div class="form-group col-md-3" style="padding-left: 152px">
+                            @Html.TextBoxFor(m => m.question4.bChoise, new { style = "width:275px; height:35px;" })
+                            @Html.ValidationMessageFor(m => m.question4.id)
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="form-group col-md-3">
+                            @Html.TextBoxFor(m => m.question4.cChoise, new { style = "width:275px; height:35px;" })
+                            @Html.ValidationMessageFor(m => m.question4.id)
+                        </div>
+
+
+                        <div class="form-group col-md-3" style="padding-left: 152px">
+                            @Html.TextBoxFor(m => m.question4.dChoise, new { style = "width:275px; height:35px;" })
+                            @Html.ValidationMessageFor(m => m.question4.id)
+                        </div>
+                    </div>
+                    <div class="row" style="padding-left: 225px">
+                        <div class="form-group col-md-6">
+
+                            @Html.DropDownListFor(m => m.question4.trueAnswer4, new List<SelectListItem>
+                                {
+                                new SelectListItem { Text = "A", Value = "1" },
+                                new SelectListItem { Text = "B", Value = "2" },
+                                new SelectListItem { Text = "C", Value = "3" },
+                                new SelectListItem { Text = "D", Value = "4" },
+
+                                }, "Doğru Cevap Seç")
+                            @Html.ValidationMessageFor(m => m.question4.trueAnswer4)
+                        </div>
+                    </div>
+                    <br />
+
+                </div>
+
+                <div class="row" style="padding-left:630px;">
+                    <button type="submit" style="background-color: green;border: none;color: white;padding: 15px 32px;text-align: center;text-decoration: none;display: inline-block;font-size: 16px;margin: 4px 2px;cursor: pointer;border-radius: 10px;">Sınavı Oluştur</button>
+                </div>
+            </div>
+        }
+
+
+    </div>
+</div>
+
+<script>
+    $(document).ready(function () {
+
+        $("#drpTitles").change(function () {
+
+            var drpTitlesId = $("#drpTitles option:selected").val();
+            console.log(drpTitlesId);
+            $.ajax({
+                url: "/Data/GetDescription",
+                data: { 'titleId': drpTitlesId },
+                method: "POST",
+                success: function (response) {
+
+                }
+            });
+
+        });
+
+    });
+</script>
+
+

@@ -1,0 +1,35 @@
+﻿@model BusinessProject.Models.ExamModels
+@{
+    ViewData["Title"] = "ExamShow";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<table style="width:100%">
+    <tr>
+        <th>#</th>
+        <th>Başlık</th>
+        <th>Tarih</th>
+        <th></th>
+    </tr>
+    @for (int i = 0; i < Model.examList.Count; i++)
+    {
+        <tr>
+            <td>@(i+1)</td>
+            <td>@Model.examList[i].examTitle</td>
+            <td>@Model.examList[i].creationDate</td>
+            <td><a class="btn btn-primary" href="/Exam/ExamDetails/@Model.examList[i].titleId"> Sınava Git</a></td>
+            <td><a class="btn btn-primary" href="/Exam/Del/@Model.examList[i].titleId  "> Sil</a></td>
+        </tr>
+    }
+    @*@foreach (var exam in Model.examList)
+        {
+
+            <tr>
+                <td>@</td>
+                <td>@exam.examTitle</td>
+                <td>@exam.creationDate</td>
+                <td><a class="btn btn-primary" href="/Exam/ExamDetails/@exam.titleId"> Sınava Git</a></td>
+                <td><a class="btn btn-primary" href="/Exam/Del/@exam.titleId  "> Sil</a></td>
+            </tr>
+        }*@
+</table>

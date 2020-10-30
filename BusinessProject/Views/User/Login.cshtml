@@ -1,0 +1,39 @@
+﻿@model BusinessProject.Models.UserModels
+
+@{
+    ViewData["Title"] = "Login";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<div class="block-center mt-xl wd-xl">
+    <!-- START panel-->
+    <div class="panel panel-dark panel-flat">
+        <div class="panel-heading text-center">
+
+        </div>
+        <div class="panel-body">
+
+            <div id="panel-login">
+                <p class="text-center pv" style="font-size: 14pt;font-family: Times New Roman;font-weight: bold;">Kullanıcı Girişi</p>
+                @using (Html.BeginForm("Login", "User", FormMethod.Post))
+                {
+
+                    <div class="form-group has-feedback" style="padding-left: 550px">
+                        @Html.EditorFor(m => m.user.userName, new { htmlAttributes = new { style = "width:275px; height:35px;", @placeholder = "Kullanıcı Adı", @autocomplete = "off" } })
+                        @Html.ValidationMessageFor(m => m.user.userName, "", new { @class = "text-danger" })
+                    </div>
+                    <div class="form-group has-feedback" style="padding-left: 550px">
+                        @Html.EditorFor(m => m.user.password, new { htmlAttributes = new { style = "width:275px; height:35px;", @placeholder = "Şifre", @type = "password" } })
+                        @Html.ValidationMessageFor(m => m.user.password, "", new { @class = "text-danger" })
+                    </div>
+                    <div class="row" style="padding-left:600px;">
+                        <button type="submit" style="background-color: green;border: none;color: white;padding: 15px 32px;text-align: center;text-decoration: none;display: inline-block;font-size: 16px;margin: 4px 2px;cursor: pointer;border-radius: 10px;width:150px;">Giriş</button>
+                    </div>
+                }
+
+            </div>
+        </div>
+
+    </div>
+</div>
+
